@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, TextInput, ImageBackground, StyleSheet, Platform } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 export default class Start extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Start extends Component {
             <Text style={styles.btnText}>Start Chatting</Text>
           </TouchableOpacity>
         </View>
+        {Platform.OS === 'android' ? <KeyboardSpacer /> : null}
       </ImageBackground>
     )
   }
