@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, AsyncStorage, NetInfo } from 'react-native';
-import { GiftedChat, Bubble, renderBubble } from 'react-native-gifted-chat';
+import { GiftedChat, Bubble, renderBubble, InputToolbar } from 'react-native-gifted-chat';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 const firebase = require('firebase');
@@ -195,7 +195,7 @@ export default class Chat extends Component {
       <View style={{ flex: 1, backgroundColor: this.props.navigation.state.params.color }}>
         <GiftedChat
           renderBubble={this.renderBubble.bind(this)}
-          renderInputToolbar={this.renderInputToolbar}
+          renderInputToolbar={this.renderInputToolbar.bind(this)}
           messages={this.state.messages}
           onSend={messages => this.onSend(messages)}
           user={this.state.user}
