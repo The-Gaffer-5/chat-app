@@ -106,13 +106,13 @@ export default class Chat extends Component {
     }
   }
 
-  // async deleteMessages() {
-  //   try {
-  //     await AsyncStorage.removeItem('messages');
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
+  async deleteMessages() {
+    try {
+      await AsyncStorage.removeItem('messages');
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   componentDidMount() {
     this.getMessages();
@@ -195,6 +195,7 @@ export default class Chat extends Component {
       <View style={{ flex: 1, backgroundColor: this.props.navigation.state.params.color }}>
         <GiftedChat
           renderBubble={this.renderBubble.bind(this)}
+          renderInputToolbar={this.renderInputToolbar}
           messages={this.state.messages}
           onSend={messages => this.onSend(messages)}
           user={this.state.user}
