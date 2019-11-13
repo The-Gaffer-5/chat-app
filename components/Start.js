@@ -8,9 +8,10 @@ export default class Start extends Component {
     super(props);
     this.state = {
       name: '',
-      color: ''
-    }
+      color: '',
+    };
   }
+
   render() {
     return (
       <ImageBackground source={require('../assets/bkgd.png')} style={{ width: '100%', height: '100%', alignItems: 'center' }}>
@@ -38,24 +39,24 @@ export default class Start extends Component {
         </View>
         {Platform.OS === 'android' ? <KeyboardSpacer /> : null}
       </ImageBackground>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   btnStyle: {
     backgroundColor: '#757083',
-    marginBottom: 20
+    marginBottom: 20,
   },
   btnText: {
     fontSize: 16,
-    fontWeight: "600",
+    fontWeight: '600',
     color: '#fff',
     marginTop: 25,
     marginBottom: 25,
     marginLeft: 100,
     marginRight: 100,
-    letterSpacing: 2
+    letterSpacing: 2,
   },
   textBox: {
     backgroundColor: '#fff',
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     marginTop: 30,
     borderWidth: 1,
-    borderColor: 'grey'
+    borderColor: 'grey',
   },
   loginBox: {
     width: '88%',
@@ -74,37 +75,34 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     backgroundColor: '#fff',
     marginTop: 300,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     fontSize: 45,
     fontWeight: '600',
-    color: '#fff'
+    color: '#fff',
   },
   colorBtn: {
     borderRadius: 50 / 2,
     marginBottom: 5,
     height: 40,
     width: 40,
-    margin: 5
+    margin: 5,
   },
   color1: {
-    backgroundColor: '#090C08'
+    backgroundColor: '#090C08',
   },
   color2: {
-    backgroundColor: '#474056'
+    backgroundColor: '#474056',
   },
   color3: {
-    backgroundColor: '#8A95A5'
+    backgroundColor: '#8A95A5',
   },
   color4: {
-    backgroundColor: '#B9C6AE'
+    backgroundColor: '#B9C6AE',
   },
   colorChoice: {
     flex: 4,
-    flexDirection: "row"
-  }
-})
-
-
-
+    flexDirection: 'row',
+  },
+});
