@@ -45,14 +45,14 @@ export default class Chat extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.state.params.name
+      title: `${navigation.state.params.name}'s Convo`
     };
   }
 
   onCollectionUpdate = (querySnapshot) => {
     const messages = [];
     querySnapshot.forEach(doc => {
-      var data = doc.data();
+      let data = doc.data();
       messages.push({
         _id: data._id,
         text: data.text,
@@ -166,10 +166,8 @@ export default class Chat extends Component {
 
 
   componentWillUnmount() {
-    // stop listening to authentication
     this.authUnsubscribe();
-    // stop listening for changes
-    this.unsubscribe(); //this.unsubscribeMessageUser();
+    this.unsubscribe();
   }
 
   renderBubble(props) {
